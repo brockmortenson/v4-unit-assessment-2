@@ -12,3 +12,144 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 115vh
+}
+
+.top-container {
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(70, 67, 67);
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.site-header {
+    color: rgb(42, 171, 226);
+    left: 15px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#nav {
+    width: 450px;
+    right: 0px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.site-container {
+    margin-top: 8vh;
+    margin-left: 7%;
+}
+
+.main-container {
+    width: 50%;
+    margin-top: 100px;
+}
+
+.images {
+    width: 250px;
+    height: auto;
+}
+
+.image-container {
+    height: 50vh;
+    width: 50%;
+}
+
+.image-gallery {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.view-larger {
+    padding-bottom: 10px;
+    float: right;
+    color: rgb(42, 171, 226);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#all-images {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.right-container {
+    height: 500px;
+    width: 350px;
+    margin-top: 28px;
+    position: absolute;
+    right: 20%;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-image {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    box-shadow: 5px 5px 15px 10px #dad7d7;
+}
+
+.list-container {
+    height: 265px;
+    width: 200px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    box-shadow: 5px 5px 15px 10px #dad7d7;
+}
+
+.popular-articles {
+    text-align: center;
+}
+
+.list-one {
+    padding-left: 40px;
+}
+
+.footer-container {
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(42, 171, 226);
+    position: absolute;
+    bottom: -300px; /*not sure why i had to do negative value*/
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    padding-left: 15px;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(47, 46, 46);
+}
+
+.chatbox {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
