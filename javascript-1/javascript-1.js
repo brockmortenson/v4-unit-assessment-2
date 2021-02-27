@@ -83,7 +83,7 @@ compareNums = (num1, num2) => {
 //CODE HERE
 
 bestMovie = (title) => `${title} is the best movie ever!` //SpecRunner says this isn't an arrow function....???
-  
+
 ////////////////////PROBLEM 6////////////////////
 /*
     Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
@@ -212,16 +212,16 @@ let pairsArray = []
 
 //CODE HERE
 
-const pair = () => {
-    for (let i = 0; i < lettersToPair.length; i++){
-        for (let j = lettersToPair.length - 1; j > i; j--){
-            if (lettersToPair[i] === lettersToPair[j]){
-                lettersToPair[j].push(pairsArray)
-            }
-        }
-    }
-    return pairsArray
-}
+// const pair = () => {
+//     for (let i = 0; i < lettersToPair.length; i++){
+//         for (let j = lettersToPair.length - 1; j > i; j--){
+//             if (lettersToPair[i] === lettersToPair[j]){
+//                 lettersToPair[j].push(pairsArray)
+//             }
+//         }
+//     }
+//     return pairsArray
+// }
 
 //////////////////////////////////PROBLEMS 11-14//////////////////////////////////
 /*
@@ -264,10 +264,11 @@ let fido = new Dog('Fido', 3, 'Jack Russell', ['sit', 'shake'])
 
 //CODE HERE
 
-function bark(){
-    `${this.name} says bark!`
+Dogs = {
+    Bark: function bark(){
+        return this.name + " says bark!"
+        }
 }
-
 
 
 /*
@@ -277,8 +278,7 @@ function bark(){
 
 //CODE HERE
   
-let fidoSpeak = Dog.bark.call(fido)
-
+let fidoSpeak = Dogs.Bark.call(fido);
   
 ////////////////////PROBLEM 13////////////////////
 /*
@@ -290,6 +290,10 @@ let fidoSpeak = Dog.bark.call(fido)
 
 //CODE HERE
 
+function teachTrick(trick){
+    trick.push(tricks)
+    return tricks
+}
 
 /*
     Invoke the bind method on teachTrick, passing in fido as the context and the string 'stay' as a trick.
@@ -298,7 +302,8 @@ let fidoSpeak = Dog.bark.call(fido)
 
 //CODE HERE
   
-  
+// let teachStay = teachTrick.bind(trick)
+// Commented out to avoid errors in specrunner
 ////////////////////PROBLEM 14////////////////////
 /*
     Write a function called 'dogIntro' that will take in two parameters, treat and toy,
@@ -309,6 +314,10 @@ let fidoSpeak = Dog.bark.call(fido)
 
 //CODE HERE
 
+function dogIntro(treat, toy){
+    return `${this.name} is a ${this.breed} that loves ${treat} and their ${toy}`
+}
+
 
 /*
     Invoke the apply method on dogIntro, passing in fido as the context 
@@ -317,8 +326,9 @@ let fidoSpeak = Dog.bark.call(fido)
 */
 
 //CODE HERE
-  
 
+// let fidoIntro = dogIntro.apply(fido, ['chicken', 'tennis ball'])
+// Commented out to avoid errors in specrunner
 ////////////////////PROBLEM 15////////////////////
 /*
     Write a constructor function called Phone.
@@ -328,6 +338,14 @@ let fidoSpeak = Dog.bark.call(fido)
 
 //CODE HERE
 
+
+function Phone(brand, model, storage, color, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.sold = sold;
+}
   
 /*
     Next make three new phones using your constructor function.
@@ -341,20 +359,27 @@ let fidoSpeak = Dog.bark.call(fido)
 */
 
 //CODE HERE
-  // let phone1 = 
+
+let phone1 = new Phone('Apple', 'iPhone', 5, 'black', false);
   
-  // let phone2 = 
+let phone2 = new Phone('Samsung', 'Galaxy', 10, 'white', false);
   
-  // let phone3 = 
-  
+let phone3 = new Phone('Google', 'Pixel', 15, 'white', false);
+
+
 /*
-    Last, add a prototype method to Phone.
-    Call the method 'sell'.
-    Sell should be a function that changes the value of sold to true and
-    returns the string: 'BRAND MODEL has been sold.'
-    Don't forget about the context of BRAND and MODEL.
+Last, add a prototype method to Phone.
+Call the method 'sell'.
+Sell should be a function that changes the value of sold to true and
+returns the string: 'BRAND MODEL has been sold.'
+Don't forget about the context of BRAND and MODEL.
 */
 
 //CODE HERE
 
-  
+Phone.prototype.sell = function(){
+    if (this.sold === false){
+        this.sold = true
+    }
+    return `${this.brand} ${this.model} has been sold.`
+}
